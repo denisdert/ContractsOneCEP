@@ -24,19 +24,20 @@ export interface InfoBase {
 export interface RabbitInput {
     common:{
         infobase: InfoBase;
-        keytask: string;
+        keytask: string;//Идентификатор фонового задания которое обработало сообщение
         result: Results;
         action: Actions;
+        countTicks: Integer;//Количество секунд которое обрабатывалось сообщение
     };//Общая часть сообщения
     
-    input: {
+    message: {
         routingKey: string;//топик получаемого сообщения
         payload: any;//сообщение json
         countBinaryFiles: Integer;//количество бинарных файлов
         correlationId: Guid;//ID получаемого сообщения
     };//Входящее сообщение
     
-    output?: {
+    answer?: {
         payload: any;//сообщение json
         statusCode: Integer;//код возврата сообщения
         countBinaryFiles: Integer;//количество возвращаемых бинарных файлов
@@ -51,7 +52,7 @@ export interface RabbitOutput {
         countTicks: Integer;//Количество секунд которые затратилось на отправку сообщения
     };//Общая часть сообщения
     
-    output: {
+    message: {
         routingKey: string;//топик отправляемого сообщения
         exchange: string;//имя обменника на которого отправляется сообщение
         payload: any;//Отправляемое сообщение в формате json
@@ -59,7 +60,7 @@ export interface RabbitOutput {
         timeout?: Integer;//заданный таймаут для ожидания ответа на rpc сообщение 
     }//Отправляемое сообщение
     
-    input?: {
+    answer?: {
         payload: any;//Получаемое сообщение в формате json
         statusCode: Integer;
         error?: string;//Ошибки которая нам возвращает система в которую мы отправляем сообщение
