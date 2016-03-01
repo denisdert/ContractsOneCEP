@@ -7,19 +7,20 @@ export enum Results{
     ВСОтвет_НеОбработано,
     ВСОтвет_ПоставитьВОчередь,
     ВСОтвет_ОстановитьОбработку
-}
+}//Действия с входящими Rabbit сообщениями
 
+//
 export enum Actions{
     Ack,
     Reject,
     Requeue,
-}
+}//Действия с входящими Rabbit сообщениями
 
 export interface InfoBase {
     name: string;
     ref: string;
     srvr: string;
-}
+}//Информационная база
 
 export interface RabbitInput {
     common:{
