@@ -58,7 +58,7 @@ export interface RabbitOutput {
         exchange: string;//имя обменника на которого отправляется сообщение
         payload: any;//Отправляемое сообщение в формате json
         countBinaryFiles: Integer;//количество отправляемых бинарных файлов
-        timeout?: Integer;//заданный таймаут для ожидания ответа на rpc сообщение 
+        timeout?: Integer;//заданный таймаут для ожидания ответа на rpc сообщение
     }//Отправляемое сообщение
     
     answer?: {
