@@ -1,5 +1,4 @@
-export interface Integer extends Number {}
-export interface Guid extends String {}
+import {Integer, Guid} from "../core";
 
 export enum Results{
     ВСОтвет_Обработано,
